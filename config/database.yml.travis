@@ -1,0 +1,22 @@
+postgresql: &postgresql
+  adapter: postgresql
+  username: postgres
+  password: 
+  database: travis_ci_test
+  min_messages: ERROR
+
+default: &default
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *postgresql
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
