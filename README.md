@@ -14,8 +14,9 @@ Both of these tests provide documentation of your code. Writing tests makes refa
 
 2 times we commit:
 
-1. We commit whenever we complete a feature.
-2. After we finish refactoring and all tests are green (passing).
+1. We commit after passing unit tests.
+1. We commit and **push** whenever we pass a feature.
+1. After we finish refactoring and all tests are green (passing).
 
 You should always run your tests before you commit/push your work.
 
@@ -43,6 +44,12 @@ By the end of this lesson, students should be able to:
 
 If you're looking for extra challenge or practice once you've completed the above, try to...
 
+Make comments have many comments. Comments can be nested, or `Comment has_many :comments`.
+
+Implement voting on both comments and articles. Currently, we only implemented voting on articles.
+
+Implement Devise for user authentication. You should only be able to create a new article, comment on an article, or vote if you are logged in.
+
 ## Notes
 
 Gotcha's and extra information
@@ -60,6 +67,3 @@ articles spec for articles is the demo (i do)
 comments spec will be guided lab (we do)
 votes (only for articles) spec (you do)
 
-bonus: nested comments
-bonus: voting on both comments and articles
-bonus: devise for user authentication
