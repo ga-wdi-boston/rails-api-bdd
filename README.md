@@ -37,3 +37,12 @@ List additional related resources such as videos, blog posts and official docume
 - Item 1
 - Item 2
 - Item 3
+
+
+articles spec for articles is the demo (i do)
+comments spec will be guided lab (we do)
+votes (only for articles) spec (you do)
+
+bonus: nested comments
+bonus: voting on both comments and articles
+bonus: devise for user authentication
