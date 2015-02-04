@@ -1,0 +1,8 @@
+<h1>Articles</h1>
+<% @articles.each do |article| %>
+  <article>
+  <!-- articles are for publishing and you can expect articles to be republished across the web -->
+    <h1><%= article.title %></h1>
+    <p><%= article.body %></p>
+  </article>
+<% end %>
