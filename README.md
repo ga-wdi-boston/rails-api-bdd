@@ -50,7 +50,7 @@ You can push when you're done passing a feature. You should **always run your te
 
 ## Lab
 
-Pair with a partner to create another resource (Comments) together using the testing process demo'ed by the instructor.
+Pair with a partner to create another resource (Comments) together using the testing process demo'ed by the instructor. Comments should be a CRUD resource (seven controller actions, five feature scenarios). Write your features one at a time, and use failing features to drive unit tests. Use failing unit tests to drive code. As you pass units, evenutally the feature will pass; this means you can write your next feature. Continue until all your features and units are written and passing (approximately 40 tests comments).
 
 ## Learn and Practice: Heroku
 
