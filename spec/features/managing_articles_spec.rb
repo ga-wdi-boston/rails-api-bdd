@@ -12,7 +12,7 @@ RSpec.feature 'Managing articles' do
     visit '/articles'
 
     # verify
-    expect(page.find('h1')).to have_content 'Articles'
+    expect(page).to have_content 'Articles'
     expect(page).to have_selector 'article', count: 3
 
   end
