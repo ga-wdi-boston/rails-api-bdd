@@ -8,6 +8,8 @@
 
 Tests *limit* what we have to debug. For instance, if we have all green, passing tests, we know that when we deploy to Heroku our code isn't the problem, rather an issue with Heroku. Passing tests limits the types of debugging you have to do.
 
+![Test Cycle](http://jakegoulding.com/images/blog/bdd-cycle.png)
+
 ### Feature Tests
 
 **Feature tests** are for catching regressions/bugs. Features break less because they're higher level. Features test user experience. Feature tests document workflow within the app. Feature tests tell you what's missing, and drive each step of the development process.
