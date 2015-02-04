@@ -22,7 +22,29 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update_attributes(article_params)
+      flash[:success] = 'Article successfully updated'
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    Article.find(params[:id]).destroy
+    flash[:success] = 'Article successfully destroyed'
+    redirect_to articles_path
+  end
+
   private
+
   def article_params
     params.require(:article).permit(:title, :body)
   end

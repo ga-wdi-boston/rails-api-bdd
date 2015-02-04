@@ -104,9 +104,79 @@ RSpec.describe ArticlesController do
     end
   end
 
+  describe 'GET edit' do
+    it 'has a 200 status code' do
+      article = Article.create!(valid_attributes)
+      get :edit, id: article
+      expect(response.status).to eq 200
+    end
+
+    it 'renders the edit template' do
+      article = Article.create!(valid_attributes)
+      get :edit, id: article
+      expect(response).to render_template('edit')
+    end
+
+    it 'assigns @article' do
+      article = Article.create!(valid_attributes)
+      get :edit, id: article
+      expect(assigns(:article)).to eq article
+    end
+  end
+
+  describe 'PATCH update' do
+    context 'with valid attributes' do
+      let(:new_attributes) {
+        { title: 'Another Stupid Trick', body: 'Much disbelief. Wow.' }
+      }
+
+      it 'updates the requested article' do
+        article = Article.create!(valid_attributes)
+        patch :update, id: article, article: new_attributes
+        article.reload
+        expect(article.title).to eq new_attributes[:title]
+      end
+
+      it 'assigns @article' do
+        article = Article.create!(valid_attributes)
+        patch :update, id: article, article: new_attributes
+        expect(assigns(:article)).to eq article
+      end
+
+      it 'redirects to the article' do
+        article = Article.create!(valid_attributes)
+        patch :update, id: article, article: new_attributes
+        expect(response).to redirect_to article
+      end
+    end
+
+    context 'with invalid attributes' do
+      it 'assigns @article' do
+        article = Article.create!(valid_attributes)
+        patch :update, id: article, article: invalid_attributes
+        expect(assigns(:article)).to eq article
+      end
+
+      it 're-renders the edit template' do
+        article = Article.create!(valid_attributes)
+        patch :update, id: article, article: invalid_attributes
+        expect(response).to render_template('edit')
+      end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    it 'destroys the requested article' do
+      article = Article.create!(valid_attributes)
+      expect {
+        delete :destroy, id: article
+      }.to change(Article, :count).by(-1)
+    end
+
+    it 'redirects to the articles list' do
+      article = Article.create!(valid_attributes)
+      delete :destroy, id: article
+      expect(response).to redirect_to articles_url
+    end
+  end
 end
-
-
-
-
-
