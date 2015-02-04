@@ -52,7 +52,7 @@ You can push when you're done passing a feature. You should **always run your te
 
 Pair with a partner to create another resource (Comments) together using the testing process demo'ed by the instructor.
 
-## Heroku
+## Learn and Practice: Heroku
 
 We use **Heroku**, a cloud hosting platform, as a free and public place to host our Rails projects. From now on, you will be deploying much of your work to Heroku, but first you need to learn how to do it. 
 
