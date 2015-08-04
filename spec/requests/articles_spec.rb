@@ -38,11 +38,25 @@ RSpec.describe 'Articles API' do
 
   describe 'GET /articles/:id' do
     it 'shows one article' do
+      get "/articles/#{article.id}"
+
+      expect(response).to be_success
+
+      article_response = JSON.parse(response.body)
+      expect(article_response['id']).to eq(article.id)
+      expect(article_response['title']).to eq(article.title)
     end
   end
 
   describe 'POST /articles' do
     it 'creates an article' do
+      post '/articles', article: article_params, format: :json
+
+      expect(response).to be_success
+
+      article_response = JSON.parse(response.body)
+      expect(article_response['id']).not_to be_nil
+      expect(article_response['title']).to eq(article_params[:title])
     end
   end
 
@@ -52,11 +66,22 @@ RSpec.describe 'Articles API' do
     end
 
     it 'updates an article' do
+      patch "/articles/#{article.id}", article: article_diff, format: :json
+
+      expect(response).to be_success
+
+      article_response = JSON.parse(response.body)
+      expect(article_response['id']).to eq(article.id)
+      expect(article_response['title']).to eq(article_diff[:title])
     end
   end
 
   describe 'DELETE /articles/:id' do
     it 'deletes an article' do
+      delete "/articles/#{article.id}", article: { id: article.id }, format: :json
+
+      expect(response).to be_success
+      expect(response.body).to be_empty
     end
   end
 end
