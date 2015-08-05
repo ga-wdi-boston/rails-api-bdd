@@ -23,18 +23,6 @@ RSpec.describe 'Comments API' do
     Comment.delete_all
   end
 
-  describe 'GET /comments' do
-    it 'lists all comments' do
-      get '/comments'
-
-      expect(response).to be_success
-
-      comments_response = JSON.parse(response.body)
-      expect(comments_response.length).to eq(comments.count)
-      expect(comments_response.first['content']).to eq(comment.content)
-    end
-  end
-
   describe 'GET /comments/:id' do
     it 'shows one comment' do
       get "/comments/#{comment.id}"
@@ -44,18 +32,6 @@ RSpec.describe 'Comments API' do
       comment_response = JSON.parse(response.body)
       expect(comment_response['id']).to eq(comment.id)
       expect(comment_response['content']).to eq(comment.content)
-    end
-  end
-
-  describe 'POST /comments' do
-    it 'creates an comment' do
-      post '/comments', comment: comment_params, format: :json
-
-      expect(response).to be_success
-
-      comment_response = JSON.parse(response.body)
-      expect(comment_response['id']).not_to be_nil
-      expect(comment_response['content']).to eq(comment_params[:content])
     end
   end
 
