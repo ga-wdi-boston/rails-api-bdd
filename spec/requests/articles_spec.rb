@@ -37,12 +37,12 @@ RSpec.describe 'Articles API' do
   end
 
   describe 'GET /articles/:id' do
-    it 'shows one article' do
+    skip 'shows one article' do
     end
   end
 
   describe 'POST /articles' do
-    it 'creates an article' do
+    skip 'creates an article' do
     end
   end
 
@@ -51,12 +51,12 @@ RSpec.describe 'Articles API' do
       { title: 'Two Stupid Tricks' }
     end
 
-    it 'updates an article' do
+    skip 'updates an article' do
     end
   end
 
   describe 'DELETE /articles/:id' do
-    it 'deletes an article' do
+    skip 'deletes an article' do
     end
   end
 end

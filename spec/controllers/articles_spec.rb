@@ -21,18 +21,18 @@ RSpec.describe ArticlesController do
   end
 
   describe 'GET index' do
-    it 'is succesful' do
+    skip 'is succesful' do
     end
 
-    it 'renders a JSON response' do
+    skip 'renders a JSON response' do
     end
   end
 
   describe 'GET show' do
-    it 'is successful' do
+    skip 'is successful' do
     end
 
-    it 'renders a JSON response' do
+    skip 'renders a JSON response' do
     end
   end
 
@@ -41,10 +41,10 @@ RSpec.describe ArticlesController do
       post :create, article: article_params, format: :json
     end
 
-    it 'is successful' do
+    skip 'is successful' do
     end
 
-    it 'renders a JSON response' do
+    skip 'renders a JSON response' do
     end
   end
 
@@ -57,15 +57,15 @@ RSpec.describe ArticlesController do
       patch :update, id: article.id, article: article_diff, format: :json
     end
 
-    it 'is successful' do
+    skip 'is successful' do
     end
 
-    it 'renders a JSON response' do
+    skip 'renders a JSON response' do
     end
   end
 
   describe 'DELETE destroy' do
-    it 'is successful and returns an empty response' do
+    skip 'is successful and returns an empty response' do
     end
   end
 end
