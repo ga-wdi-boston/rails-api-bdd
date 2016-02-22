@@ -71,48 +71,52 @@ suggest commiting:
 You can push when you're done passing a feature. You should **always run your
 tests** before you commit/push your work.
 
-## Code Along: Write Article Features
-
 We'll start with a request spec. Request specs perform a similar job to `curl`:
 they emulate testing your API from the client's point-of-view.
 
-Fail request specs will drive creating routing specs. Routing specs will drive
-creating controller specs. Finally, controller specs will drive creating model
-specs. Once we have all these smaller tests (units) passing, the feature spec
-(request spec) should pass automatically!
+Failing request specs will drive creating routing specs. Routing specs will
+drive creating controller specs. Finally, controller specs will drive creating
+model specs. Once we have all these smaller tests (units) passing, the feature
+spec (request spec) should pass automatically!
 
 Let the tests tell you what to do next, and you'll never have to think about
 your next task. It helps us get in "the zone"!
 
 ![in-the-zone](https://cloud.githubusercontent.com/assets/388761/13177815/7ed80d26-d6e9-11e5-8cf8-56d896cd0fbe.gif)
 
-## Lab: Write Comment Features
+## Demo: `GET /articles` Request Spec
 
-Pair with a partner to create another resource (Comments) together using the
-testing process demo'ed by the instructor. Comments should be a CRUD resource
-(seven controller actions, five feature scenarios). Write your features one at a
-time, and use failing features to drive unit tests. Use failing unit tests to
-drive code. As you pass units, evenutally the feature will pass; this means you
-can write your next feature. Continue until all your features and units are
-written and passing (approximately 40 tests comments).
+## Code-along: `GET /articles` Routing Spec
+
+## Code-along: `articles#index` Controller Spec
+
+## Lab: Write `ArticlesController`
+
+## Code-along: `Article` Model Spec
+
+## Lab: Write `Article` Model
+
+## Lab: Run the Specs
+
+## Lab: `GET /articles/:id` Request Spec
+
+## Lab: `GET /articles/:id` Routing Spec
+
+## Lab: `articles#show` Controller Spec
+
+## Lab: Write `articles#show`
 
 ## Bonus Challenge
 
 If you're looking for extra challenge or practice once you've completed the
-above, try the following:
+above, create a voting feature for articles using outside-in testing.
 
--   Create a voting feature for articles using outside-in testing.
-
-    This will likely be a modification of a resource (rather than creating a new
-    resource) with different controller actions than you're used to (perhaps a
-    `up` and `down` actions instead of `show` or `index`). Think about what it
-    means to vote something, and how you might test it. Start by sketching out
-    page flow on paper. Try to outline your work at a high level before you
-    start testind and coding.
-
--   Make comments have many comments. Comments can be nested, or `Comment
-    has_many :comments`.
--   Implement voting on **both** comments and articles.
+This will likely be a modification of a resource (rather than creating a new
+resource) with different controller actions than you're used to (perhaps a
+`up` and `down` actions instead of `show` or `index`). Think about what it
+means to vote something, and how you might test it. Start by sketching out
+page flow on paper. Try to outline your work at a high level before you
+start testind and coding.
 
 ## Additional Resources
 
