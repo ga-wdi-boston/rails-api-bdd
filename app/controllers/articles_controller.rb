@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
     head :no_content
   end
 
-private
+  private
 
   def set_article
     @article = Article.find(params[:id])
