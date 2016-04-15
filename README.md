@@ -50,8 +50,8 @@ step of the development process.
 
 Unit tests drive implementation and break more often, but they're smaller in
 scale and faster to execute. Unit tests test developer experience. Unit tests
-don't break down the problem into smaller, they give you the confidence that the
-smallest pieces work as expected. Unit tests document your code base.
+don't break down the problem into smaller pieces, they give you the confidence
+that the smallest pieces work as expected. Unit tests document your code base.
 
 Both of these tests provide *documentation* of your code. Writing tests makes
 refactoring easy because we can change one thing and see how it affects the
