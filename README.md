@@ -113,17 +113,17 @@ to ensure that our routes are mapped to the correct controller method.
 To wrap up our checks that all articles are correctly returned from our `index`
  method, we'll need a passing test for the controller method itself: [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb).
 
- ## GET One Article
+## GET One Article
 
- ### Lab: `GET /articles/:id` Request Spec
+### Lab: `GET /articles/:id` Request Spec
 
- ### Lab: `GET /articles/:id` Routing Spec
+### Lab: `GET /articles/:id` Routing Spec
 
- ### Lab: `articles#show` Controller Spec
+### Lab: `articles#show` Controller Spec
 
- ### Lab: Write `articles#show`
+### Lab: Write `articles#show`
 
- ## Completing Controller Specs
+## Completing Controller Specs
 
 ### Lab: Write `ArticlesController`
 
