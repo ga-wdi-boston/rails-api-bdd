@@ -115,13 +115,22 @@ To wrap up our checks that all articles are correctly returned from our `index`
 
 ## GET One Article
 
-### Lab: `GET /articles/:id` Request Spec
+### Code-along: `GET /articles/:id` Request Spec
 
-### Lab: `GET /articles/:id` Routing Spec
+In [spec/requests/articles_spec.rb](spec/requests/articles_spec.rb), let's
+make sure our API is returning a single article correctly.
+
+### Code-along: `GET /articles/:id` Routing Spec
+
+How do we make sure our routes are set to receive GET requests for a single
+article? How does routing to `articles#show` differ from `articles#index`?
 
 ### Lab: `articles#show` Controller Spec
 
-### Lab: Write `articles#show`
+Working off of our `articles#index`, build out the two `GET show` tests in
+[spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb) to
+pass. Again, remember how `articles#show` differs from `articles#index` and
+be sure to be testing against that.
 
 ## Completing Controller Specs
 
