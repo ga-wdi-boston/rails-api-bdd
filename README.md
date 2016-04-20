@@ -144,7 +144,6 @@ create passing tests for the `POST`, `PATCH`, and `DELETE` controller actions.
 In [spec/models/articles_spec.rb](spec/models/articles_spec.rb), we will need
 to write tests to check for the following:
 
-1.  Articles are associated with comments.
 1.  Articles can have many comments.
 1.  If an article is destroyed, its associated comments must also be destroyed.
 
@@ -163,6 +162,8 @@ Build out the Controller, Model, and Routes for a `Comment` entity that
 belongs to `Article`. Let request, routing, controller and model tests
 drive your build.
 
+*Note: a `comments` migration has already been created. The rest is up to you.*
+
 ### Bonus Challenge
 
 If you're looking for extra challenge or practice once you've completed the
@@ -173,7 +174,7 @@ resource) with different controller actions than you're used to (perhaps a
 `up` and `down` actions instead of `show` or `index`). Think about what it
 means to vote something, and how you might test it. Start by sketching out
 page flow on paper. Try to outline your work at a high level before you
-start testind and coding.
+start testing and coding.
 
 ## Additional Resources
 
