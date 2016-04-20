@@ -83,7 +83,9 @@ spec (request spec) should pass automatically!
 Let the tests tell you what to do next, and you'll never have to think about
 your next task. It helps us get in "the zone"!
 
-## Demo: `GET /articles` Request Spec
+## GET All Articles
+
+### Demo: `GET /articles` Request Spec
 
 To check our specs, we run `rspec spec` from the command line.
 What output to we get?
@@ -101,24 +103,34 @@ Failures:
 This output tells us exactly what went wrong (or more accurately, what did not
   go as expected), and should be treated as our guide towards working code.
 
-## Code-along: `GET /articles` Routing Spec
+### Code-along: `GET /articles` Routing Spec
 
 Let's work on our `GET /articles` routing spec in [spec/routing/articles_spec.rb](spec/routing/articles_spec.rb) together
 to ensure that our routes are mapped to the correct controller method.
 
-## Code-along: `articles#index` Controller Spec
+### Code-along: `articles#index` Controller Spec
 
 To wrap up our checks that all articles are correctly returned from our `index`
  method, we'll need a passing test for the controller method itself: [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb).
 
-## Lab: Write `ArticlesController`
+ ## GET One Article
+
+ ### Lab: `GET /articles/:id` Request Spec
+
+ ### Lab: `GET /articles/:id` Routing Spec
+
+ ### Lab: `articles#show` Controller Spec
+
+ ### Lab: Write `articles#show`
+
+ ## Completing Controller Specs
+
+### Lab: Write `ArticlesController`
 
 Continue working in [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb) to
 create passing tests for the `POST`, `PATCH`, and `DELETE` controller actions.
 
-*Note, do not yet work on `GET show`. We will work on this together.*
-
-## Code-along: `Article` Model Spec
+### Code-along: `Article` Model Spec
 
 In [spec/models/articles_spec.rb](spec/models/articles_spec.rb), we will need
 to write tests to check for the following:
@@ -127,22 +139,16 @@ to write tests to check for the following:
 1.  Articles can have many comments.
 1.  If an article is destroyed, its associated comments must also be destroyed.
 
-## Lab: Write `Article` Model and Run the Specs
+## Testing Our Model
+
+### Lab: Write `Article` Model and Run the Specs
 
 Based on our `Article` Model specs, run your specs to complete what is expected
  at [app/models/article.rb](app/models/article.rb).
 
  Run one spec at a time until they have all passed.
 
-## Lab: `GET /articles/:id` Request Spec
-
-## Lab: `GET /articles/:id` Routing Spec
-
-## Lab: `articles#show` Controller Spec
-
-## Lab: Write `articles#show`
-
-## Bonus Challenge
+### Bonus Challenge
 
 If you're looking for extra challenge or practice once you've completed the
 above, create a voting feature for articles using outside-in testing.
