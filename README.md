@@ -157,6 +157,12 @@ Based on our `Article` Model specs, run your specs to complete what is expected
 
  Run one spec at a time until they have all passed.
 
+## Further Learning
+
+Build out the Controller, Model, and Routes for a `Comment` entity that
+belongs to `Article`. Let request, routing, controller and model tests
+drive your build.
+
 ### Bonus Challenge
 
 If you're looking for extra challenge or practice once you've completed the
