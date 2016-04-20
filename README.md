@@ -83,21 +83,56 @@ spec (request spec) should pass automatically!
 Let the tests tell you what to do next, and you'll never have to think about
 your next task. It helps us get in "the zone"!
 
-![in-the-zone](https://cloud.githubusercontent.com/assets/388761/13177815/7ed80d26-d6e9-11e5-8cf8-56d896cd0fbe.gif)
-
 ## Demo: `GET /articles` Request Spec
+
+To check our specs, we run `rspec spec` from the command line.
+What output to we get?
+
+```ruby
+Failures:
+  1) Articles API GET /articles lists all articles
+     Failure/Error: get '/articles'
+
+     ActionController::RoutingError:
+       No route matches [GET] "/articles"
+     # ./spec/requests/articles_spec.rb:29:in `block (3 levels) in <top (required)>'
+```
+
+This output tells us exactly what went wrong (or more accurately, what did not
+  go as expected), and should be treated as our guide towards working code.
 
 ## Code-along: `GET /articles` Routing Spec
 
+Let's work on our `GET /articles` routing spec in [spec/routing/articles_spec.rb](spec/routing/articles_spec.rb) together
+to ensure that our routes are mapped to the correct controller method.
+
 ## Code-along: `articles#index` Controller Spec
+
+To wrap up our checks that all articles are correctly returned from our `index`
+ method, we'll need a passing test for the controller method itself: [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb).
 
 ## Lab: Write `ArticlesController`
 
+Continue working in [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb) to
+create passing tests for the `POST`, `PATCH`, and `DELETE` controller actions.
+
+*Note, do not yet work on `GET show`. We will work on this together.*
+
 ## Code-along: `Article` Model Spec
 
-## Lab: Write `Article` Model
+In [spec/models/articles_spec.rb](spec/models/articles_spec.rb), we will need
+to write tests to check for the following:
 
-## Lab: Run the Specs
+1.  Articles are associated with comments.
+1.  Articles can have many comments.
+1.  If an article is destroyed, its associated comments must also be destroyed.
+
+## Lab: Write `Article` Model and Run the Specs
+
+Based on our `Article` Model specs, run your specs to complete what is expected
+ at [app/models/article.rb](app/models/article.rb).
+
+ Run one spec at a time until they have all passed.
 
 ## Lab: `GET /articles/:id` Request Spec
 
