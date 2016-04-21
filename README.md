@@ -24,7 +24,7 @@ do.
 By the end of this lesson, students should be able to:
 
 -   Develop a Rails API using outside-in, behavior-driven testing.
--   Make wireframes to drive user stories.
+-   Make user stories to drive wireframes.
 -   Drive behavior specification with user stories.
 -   Write automated CRUD request specs with RSpec.
 -   Drive routing, model, and controller specs using request specs.
@@ -35,6 +35,28 @@ By the end of this lesson, students should be able to:
     this repository.
 1.  Install dependencies with `bundle install`.
 1.  Run `rake db:create` and `rake db:migrate`.
+
+## User Story Exercise
+
+Before diving into testing, let's revisit wireframes and user stories. We've
+used both of these for our first projects.
+
+Why were they important?
+What do our user stories do for the scope of our project?
+How are they useful when wireframing our webapp's layout and UX?
+How do good user stories and wireframes help with app development?
+
+### Lab: Create User Stories and Wireframes
+
+Say we're building a food-rating app. To make sure our app is useable and our
+time spent building it is efficient, we should take some time to:
+
+-   write out user stories so we know exaclty what our app should be able to do
+-   sketch wireframes so we have a clearer understanding of the main components
+of our app and clearer direction on how to build out each
+
+In your squads, list out as many user stories as you can for a food-rating app
+and then use those stories to drive your wireframing.
 
 ## Outside-In Testing
 
