@@ -144,17 +144,12 @@ create passing tests for the `POST`, `PATCH`, and `DELETE` controller actions.
 ### Code-along: `Article` Model Spec
 
 In [spec/models/articles_spec.rb](spec/models/articles_spec.rb), we will need
-to write tests to check for the following:
-
-1.  Articles can have many comments.
-1.  If an article is destroyed, its associated comments must also be destroyed.
+to test to make sure that new Articles created are new instances of the
+`Article` model.
 
 ### Lab: Write `Article` Model and Run the Specs
 
-Based on our `Article` Model specs, run your specs to complete what is expected
- at [app/models/article.rb](app/models/article.rb).
-
- Run one spec at a time until they have all passed.
+Let's get the test for our `Article` Model working.
 
 ## Further Learning
 
