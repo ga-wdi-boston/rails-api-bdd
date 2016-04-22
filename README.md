@@ -156,7 +156,7 @@ be sure to be testing against that.
 
 ## Completing Specs
 
-### Lab: Complete Request and Routing Specs
+### Lab: Complete `Request` and `Routing` Specs
 
 Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb)
  and [routing](spec/routing/articles_spec.rb) specs for `POST`, `PATCH`, and
