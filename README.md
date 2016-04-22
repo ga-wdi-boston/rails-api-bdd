@@ -154,9 +154,15 @@ Working off of our `articles#index`, build out the two `GET show` tests in
 pass. Again, remember how `articles#show` differs from `articles#index` and
 be sure to be testing against that.
 
-## Completing Controller Specs
+## Completing Specs
 
-### Lab: Write `ArticlesController`
+### Lab: Complete Request and Routing Specs
+
+Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb)
+ and [routing](spec/routing/articles_spec.rb) specs for `POST`, `PATCH`, and
+ `DELETE`.
+
+### Lab: Finish `ArticlesController` Specs
 
 Continue working in [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb) to
 create passing tests for the `POST`, `PATCH`, and `DELETE` controller actions.
