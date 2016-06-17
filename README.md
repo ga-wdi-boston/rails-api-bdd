@@ -112,6 +112,61 @@ your next task. It helps us get in "the zone"!
 To check our specs, we run `rspec spec` from the command line.
 What output to we get?
 
+We see the following output:
+`uninitialized constant ArticlesController (NameError)`
+
+What does that tell us?
+That we need a controller...
+`rails g controller Articles`
+
+Now what does `rspec spec` tell us?
+`uninitialized constant Article (NameError)`
+
+What does **that** tell us?
+That we need a model...
+`rails g model Article`
+
+Now what?
+`Migrations are pending. To resolve this issue, run:
+  bin/rake db:migrate RAILS_ENV=test`
+Do just that:
+`bundle exec rake db:migrate`
+
+Now we finally get to our test, but it's still throwing an error...
+```
+ActiveRecord::UnknownAttributeError:
+    unknown attribute 'title' for Article.
+  # ./spec/requests/articles_spec.rb:20:in `block (2 levels) in <top (required)>'
+  # ------------------
+  # --- Caused by: ---
+  # NoMethodError:
+  #   undefined method `title=' for #<Article id: nil, created_at: nil, updated_at: nil>
+```
+
+We see a few things here `unknown attribute 'title' for Article` and `undefined
+method 'title=' for #<Article...`
+
+What could this mean? Maybe that we need getters and setters for Articles?
+But we havent written those in awhile. Don't we just have our models inherit from ActiveRecord, and AR does the work for us? The answer is yes, and ActiveRecord writes our setters and getters to allow us to access and modify the database--but this doesn't solve our problem, does it?
+
+The issue actually stems from our migration and schema. ActiveRecord never knew to add setters and getters for 'title' because it doesn't exist in the schema and therefore our database.
+
+So, let's modify our migration--BUT FIRST! What do we have to do!?
+
+`rake db:rollback RAILS_ENV=test`
+
+Add the following line to your migration:
+
+```ruby
+  t.string :title
+```
+
+Now run migrate and try running `rspec spec` again.
+
+Repeat for `content`
+
+Now when we run `rspec spec` we should see something like this:
+
 ```ruby
 Failures:
   1) Articles API GET /articles lists all articles
