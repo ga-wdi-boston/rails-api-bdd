@@ -172,7 +172,7 @@ Based on our `Article` Model specs, run your specs to complete what is expected
 
  Run one spec at a time until they have all passed.
 
-## Code-along: Test Article Model
+### Code-along: Test Article Model
 
  In [spec/models/article_spec.rb](spec/models/article_spec.rb), let's test to
  see if we:
@@ -181,27 +181,19 @@ Based on our `Article` Model specs, run your specs to complete what is expected
 1.  have set our `inverse_of` record
 1.  are deleting comments associated to articles when articles are deleted
 
-## Lab: Test Comments Model
+### Code-along: Iterate over Article Model to Ensure Validations
 
-In [spec/models/comment_spec.rb](spec/models/comment_spec.rb), use the tests we
- created for the Article model to guide your tests to ensure you:
+Using our BDD skills, let's create tests to check that our Article model is
+validating the presence of `content` and `title`. We don't want articles
+created that omit either.
 
-1.  are associating articles to comments
-1.  have set your `inverse_of` record
+We will create our tests first and let those drive us towards an
+adequately-validated model.
 
-## Code-along: Iterate over Article Model to Ensure Validations
+### Lab: Test Comments Resource
 
- Using our BDD skills, let's create tests to check that our Article model is
- validating the presence of `content` and `title`. We don't want articles
- created that omit either.
-
- We will create our tests first and let those drive us towards an
- adequately-validated model.
-
-## Lab: Iterate over Comment Model to Ensure Validations
-
- Your turn. Let your test(s) drive you towards validating the presence of a new
- comment's `content`.
+Create and run through request, routing, controller and model specs for our
+Comments resource.
 
 ## Additional Resources
 
