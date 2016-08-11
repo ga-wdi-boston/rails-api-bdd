@@ -184,25 +184,36 @@ Based on our `Article` Model specs, run your specs to complete what is expected
 
  Run one spec at a time until they have all passed.
 
-## Further Learning
+## Code-along: Test Article Model
 
-Build out the Controller, Model, and Routes for a `Comment` entity that
-belongs to `Article`. Let request, routing, controller and model tests
-drive your build.
+ In [spec/models/article_spec.rb](spec/models/article_spec.rb), let's test to
+ see if we:
 
-*Note: a `comments` migration has already been created. The rest is up to you.*
+1.  are associating comments to articles
+1.  have set our `inverse_of` record
+1.  are deleting comments associated to articles when articles are deleted
 
-### Bonus Challenge
+## Lab: Test Comments Model
 
-If you're looking for extra challenge or practice once you've completed the
-above, create a voting feature for articles using outside-in testing.
+In [spec/models/comment_spec.rb](spec/models/comment_spec.rb), use the tests we
+ created for the Article model to guide your tests to ensure you:
 
-This will likely be a modification of a resource (rather than creating a new
-resource) with different controller actions than you're used to (perhaps a
-`up` and `down` actions instead of `show` or `index`). Think about what it
-means to vote something, and how you might test it. Start by sketching out
-page flow on paper. Try to outline your work at a high level before you
-start testing and coding.
+1.  are associating articles to comments
+1.  have set your `inverse_of` record
+
+## Code-along: Iterate over Article Model to Ensure Validations
+
+ Using our BDD skills, let's create tests to check that our Article model is
+ validating the presence of `content` and `title`. We don't want articles
+ created that omit either.
+
+ We will create our tests first and let those drive us towards an
+ adequately-validated model.
+
+## Lab: Iterate over Comment Model to Ensure Validations
+
+ Your turn. Let your test(s) drive you towards validating the presence of a new
+ comment's `content`.
 
 ## Additional Resources
 
