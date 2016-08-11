@@ -36,7 +36,7 @@ By the end of this lesson, students should be able to:
 1.  Install dependencies with `bundle install`.
 1.  Run `rake db:create` and `rake db:migrate`.
 
-## User Story Exercise
+## User Story Discussion
 
 Before diving into testing, let's revisit wireframes and user stories. We've
 used both of these for our first projects.
@@ -45,18 +45,6 @@ Why were they important?
 What do our user stories do for the scope of our project?
 How are they useful when wireframing our webapp's layout and UX?
 How do good user stories and wireframes help with app development?
-
-### Lab: Create User Stories and Wireframes
-
-Say we're building a food-rating app. To make sure our app is useable and our
-time spent building it is efficient, we should take some time to:
-
--   write out user stories so we know exaclty what our app should be able to do
--   sketch wireframes so we have a clearer understanding of the main components
-of our app and clearer direction on how to build out each
-
-In your squads, list out as many user stories as you can for a food-rating app
-and then use those stories to drive your wireframing.
 
 ## Outside-In Testing
 
@@ -234,25 +222,28 @@ to test to make sure that new Articles created are new instances of the
 
 Let's get the test for our `Article` Model working.
 
-## Further Learning
+### Code-along: Test Article Model
 
-Build out the Controller, Model, and Routes for a `Comment` entity that
-belongs to `Article`. Let request, routing, controller and model tests
-drive your build.
+ In [spec/models/article_spec.rb](spec/models/article_spec.rb), let's test to
+ see if we:
 
-*Note: a `comments` migration has already been created. The rest is up to you.*
+1.  are associating comments to articles
+1.  have set our `inverse_of` record
+1.  are deleting comments associated to articles when articles are deleted
 
-### Bonus Challenge
+### Code-along: Iterate over Article Model to Ensure Validations
 
-If you're looking for extra challenge or practice once you've completed the
-above, create a voting feature for articles using outside-in testing.
+Using our BDD skills, let's create tests to check that our Article model is
+validating the presence of `content` and `title`. We don't want articles
+created that omit either.
 
-This will likely be a modification of a resource (rather than creating a new
-resource) with different controller actions than you're used to (perhaps a
-`up` and `down` actions instead of `show` or `index`). Think about what it
-means to vote something, and how you might test it. Start by sketching out
-page flow on paper. Try to outline your work at a high level before you
-start testing and coding.
+We will create our tests first and let those drive us towards an
+adequately-validated model.
+
+### Lab: Test Comments Resource
+
+Create and run through request, routing, controller and model specs for our
+Comments resource.
 
 ## Additional Resources
 
