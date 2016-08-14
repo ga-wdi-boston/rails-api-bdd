@@ -1,4 +1,4 @@
-<% project_name = 'reddit-clone' %>
+<% project_name = 'rails-api-bdd' %>
 
 default: &default
   adapter: postgresql
