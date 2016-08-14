@@ -97,7 +97,7 @@ your next task. It helps us get in "the zone"!
 
 ### Demo: `GET /articles` Request Spec
 
-To check our specs, we run `rspec spec` from the command line.
+To check our specs, we run `bundle exec rspec spec` from the command line.
 What output to we get?
 
 ```ruby
