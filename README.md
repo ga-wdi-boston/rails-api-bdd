@@ -184,8 +184,9 @@ Based on our `Article` Model specs, run your specs to complete what is expected
 ### Code-along: Iterate over Article Model to Ensure Validations
 
 Using our BDD skills, let's create tests to check that our Article model is
-validating the presence of `content` and `title`. We don't want articles
-created that omit either.
+[validating the presence](http://api.rubyonrails.org/classes/ActiveRecord/Validations/ClassMethods.html#method-i-validates_presence_of)
+of `content` and `title`. We don't want articles created that are missing
+ either one of those fields.
 
 We will create our tests first and let those drive us towards an
 adequately-validated model.
