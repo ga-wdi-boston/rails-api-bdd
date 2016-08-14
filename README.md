@@ -34,7 +34,7 @@ By the end of this lesson, students should be able to:
 1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
     this repository.
 1.  Install dependencies with `bundle install`.
-1.  Run `rake db:create` and `rake db:migrate`.
+1.  Run `bundle exec rake db:create` and `bundle exec rake db:migrate`.
 
 ## User Story Discussion
 
