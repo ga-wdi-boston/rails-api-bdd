@@ -206,7 +206,9 @@ Comments resource.
 -   [#275 How I Test - RailsCasts](http://railscasts.com/episodes/275-how-i-test)
 -   [How We Test Rails Applications](http://robots.thoughtbot.com/how-we-test-rails-applications)
 
+
 ## [License](LICENSE)
 
-Source code distributed under the MIT license. Text and other assets copyright
-General Assembly, Inc., all rights reserved.
+1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
+1.  All software code is licensed under GNU GPLv3. For commercial use or
+    alternative licensing, please contact legal@ga.co.
