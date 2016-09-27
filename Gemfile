@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.1'
 
 gem 'rails', '~> 4.2.6'
 gem 'rails-api'
-gem 'active_model_serializers', '= 0.10.0.rc4'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.11'
@@ -13,6 +13,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
   gem 'pry', '~> 0.10.3'
   gem 'byebug', '~> 8.2.2'
   gem 'pry-byebug', '~> 3.3.0'
@@ -20,7 +21,6 @@ end
 
 group :development do
   gem 'pry-rails', '~> 0.3.4'
-  gem 'rb-readline'
   gem 'spring', '~> 1.6.4'
   gem 'spring-commands-rspec', '~> 1.0.4'
 end
