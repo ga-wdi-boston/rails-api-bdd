@@ -13,7 +13,8 @@ RSpec.describe 'routes for articles' do
     )
   end
 
-  skip 'routes POST /articles to the articles#create action' do
+  it 'routes POST /articles to the articles#create action' do
+    expect(post('/articles')).to route_to('articles#create')
   end
 
   skip 'routes PATCH /articles/:id to the articles#update action' do
