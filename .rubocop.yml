@@ -3,3 +3,9 @@ Style/Documentation:
     - 'app/controllers/*'
     - 'app/models/*'
     - 'app/serializers/*'
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/**'
+    - 'config/database.yml'
