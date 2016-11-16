@@ -1,4 +1,3 @@
-#
 class UsersController < ProtectedController
   skip_before_action :authenticate, only: [:signup, :signin]
 
