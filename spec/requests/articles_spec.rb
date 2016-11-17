@@ -41,8 +41,8 @@ RSpec.describe 'Articles API' do
     end
   end
 
-  describe 'POST /articles' do
-    skip 'creates an article' do
+  describe 'DELETE /articles/:id' do
+    skip 'deletes an article' do
     end
   end
 
@@ -55,8 +55,8 @@ RSpec.describe 'Articles API' do
     end
   end
 
-  describe 'DELETE /articles/:id' do
-    skip 'deletes an article' do
+  describe 'POST /articles' do
+    skip 'creates an article' do
     end
   end
 end

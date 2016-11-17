@@ -36,15 +36,8 @@ RSpec.describe ArticlesController do
     end
   end
 
-  describe 'POST create' do
-    before(:each) do
-      post :create, article: article_params, format: :json
-    end
-
-    skip 'is successful' do
-    end
-
-    skip 'renders a JSON response' do
+  describe 'DELETE destroy' do
+    skip 'is successful and returns an empty response' do
     end
   end
 
@@ -64,8 +57,15 @@ RSpec.describe ArticlesController do
     end
   end
 
-  describe 'DELETE destroy' do
-    skip 'is successful and returns an empty response' do
+  describe 'POST create' do
+    before(:each) do
+      post :create, article: article_params, format: :json
+    end
+
+    skip 'is successful' do
+    end
+
+    skip 'renders a JSON response' do
     end
   end
 end

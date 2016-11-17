@@ -95,7 +95,9 @@ your next task. It helps us get in "the zone"!
 
 ## GET All Articles
 
-### Demo: `GET /articles` Request Spec
+### Demo: Feature Test
+
+####`GET /articles` Request Spec
 
 To check our specs, we run `bundle exec rspec spec` from the command line.
 What output to we get?
@@ -147,13 +149,13 @@ be sure to be testing against that.
 ### Lab: Complete `Request` and `Routing` Specs
 
 Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb)
- and [routing](spec/routing/articles_spec.rb) specs for `POST`, `PATCH`, and
- `DELETE`.
+ and [routing](spec/routing/articles_spec.rb) specs for `DELETE`, `PATCH`, and
+ `POST`.
 
 ### Lab: Finish `ArticlesController` Specs
 
 Continue working in [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb) to
-create passing tests for the `POST`, `PATCH`, and `DELETE` controller actions.
+create passing tests for the `DELETE`, `PATCH`, and `POST` controller actions.
 
 ## Testing Our Model
 
