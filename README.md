@@ -99,7 +99,7 @@ your next task. It helps us get in "the zone"!
 
 ####`GET /articles` Request Spec
 
-To check our specs, we run `bundle exec rspec spec` from the command line.
+To check our specs, we run `bundle exec rake test` from the command line.
 What output to we get?
 
 ```ruby
@@ -117,20 +117,42 @@ This output tells us exactly what went wrong (or more accurately, what did not
 
 ### Code-along: `GET /articles` Routing Spec
 
+Our test told us that no route matches "/articles". So the next step is to write
+a test for that route.
+What do we expect that route to do?
+
 Let's work on our `GET /articles` routing spec in [spec/routing/articles_spec.rb](spec/routing/articles_spec.rb) together
 to ensure that our routes are mapped to the correct controller method.
 
+Now that we have a test, let's create the route!
+Remeber, each time a unit test passes, it's time to commit.
+
 ### Code-along: `articles#index` Controller Spec
+
+Let's run `bundle exec rake test` again now that our route test passed.
+
+We get a nice new error:
+```sh
+Failure/Error: get '/articles'
+
+     AbstractController::ActionNotFound:
+       The action 'index' could not be found for ArticlesController
+```
 
 To wrap up our checks that all articles are correctly returned from our `index`
  method, we'll need a passing test for the controller method itself: [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb).
+
+Once the test is written, let's write an `index` method on the Article Controller.
+Don't forget to commit when your tests pass!
 
 ## GET One Article
 
 ### Code-along: `GET /articles/:id` Request Spec
 
 In [spec/requests/articles_spec.rb](spec/requests/articles_spec.rb), let's
-make sure our API is returning a single article correctly.
+make sure our API is returning a single article correctly. Before we write our
+test, let's think about what our app is supposed to DO when it receives a GET
+request to this route.
 
 ### Code-along: `GET /articles/:id` Routing Spec
 
@@ -146,16 +168,36 @@ be sure to be testing against that.
 
 ## Completing Specs
 
-### Lab: Complete `Request` and `Routing` Specs
+### Lab: DELETE
 
-Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb)
- and [routing](spec/routing/articles_spec.rb) specs for `DELETE`, `PATCH`, and
- `POST`.
+#### Request spec
+Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb).
+What does a request to delete do?
 
-### Lab: Finish `ArticlesController` Specs
+#### Routing spec
+Based on our `GET` specs, complete [routing](spec/routing/articles_spec.rb) specs for `DELETE`. What should the route do? Then write a route so that the test passes.
+Remember to commit after passing the test!
+
+#### Controller spec
 
 Continue working in [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb) to
-create passing tests for the `DELETE`, `PATCH`, and `POST` controller actions.
+create passing tests for the `DELETE` controller actions. What does the `DELETE`
+controller action do?
+Then write the controller action so that the test passes, and commit.
+
+### Code-along: PATCH Request
+Working together, let's create a feature test for `PATCH` requests.
+
+### Lab: PATCH route
+Write a test for the `PATCH` route, and make it pass.
+
+### Code-along: PATCH controller
+Now that our route works, we're getting an error about our controller. Let's
+write a test for that!
+
+### Lab: POST
+Write a feature test for post requests.
+Then write tests for the route and controller.
 
 ## Testing Our Model
 
