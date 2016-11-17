@@ -56,6 +56,7 @@ Feature tests are for catching regressions/bugs. Features break less because
 they're higher level. Features test user experience. Feature tests document
 workflow within the app. Feature tests tell you what's missing, and drive each
 step of the development process.
+Feature tests are driven by user stories.
 
 ### Unit Tests
 
@@ -98,6 +99,8 @@ your next task. It helps us get in "the zone"!
 ### Demo: Feature Test
 
 ####`GET /articles` Request Spec
+
+**User story:** As a user, I want to see a list of articles.
 
 To check our specs, we run `bundle exec rake test` from the command line.
 What output to we get?
@@ -149,6 +152,8 @@ Don't forget to commit when your tests pass!
 
 ### Code-along: `GET /articles/:id` Request Spec
 
+**User Story:** As a user, I want to see a specific article.
+
 In [spec/requests/articles_spec.rb](spec/requests/articles_spec.rb), let's
 make sure our API is returning a single article correctly. Before we write our
 test, let's think about what our app is supposed to DO when it receives a GET
@@ -171,6 +176,8 @@ be sure to be testing against that.
 ### Lab: DELETE
 
 #### Request spec
+**User Story:** As a user, I want to be able to delete an article.
+
 Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb).
 What does a request to delete do?
 
@@ -186,6 +193,8 @@ controller action do?
 Then write the controller action so that the test passes, and commit.
 
 ### Code-along: PATCH Request
+**User Story:** As a user, I would like to update an article.
+
 Working together, let's create a feature test for `PATCH` requests.
 
 ### Lab: PATCH route
@@ -196,8 +205,10 @@ Now that our route works, we're getting an error about our controller. Let's
 write a test for that!
 
 ### Lab: POST
+**User Story:** As a user, I would like to create an article.
+
 Write a feature test for post requests.
-Then write tests for the route and controller.
+Then, following BDD, write tests for the route and controller.
 
 ## Testing Our Model
 
@@ -208,6 +219,9 @@ to write tests to check for the following:
 
 1.  Articles can have many comments.
 1.  If an article is destroyed, its associated comments must also be destroyed.
+
+Our first step will be to modify our feature tests to account for these
+new requirements.
 
 ### Lab: Write `Article` Model and Run the Specs
 
