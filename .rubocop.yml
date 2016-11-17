@@ -1,3 +1,7 @@
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Style/Documentation:
   Exclude:
     - 'app/controllers/*'
@@ -9,3 +13,5 @@ AllCops:
     - 'db/schema.rb'
     - 'db/migrate/**'
     - 'config/database.yml'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
