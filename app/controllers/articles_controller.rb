@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_filter :set_article, only: [:show, :update, :destroy]
 
   def index
+    render json: Article.all
   end
 
   def show
