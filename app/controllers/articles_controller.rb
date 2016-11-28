@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    render json: @article
   end
 
   def destroy
