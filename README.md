@@ -56,6 +56,7 @@ Feature tests are for catching regressions/bugs. Features break less because
 they're higher level. Features test user experience. Feature tests document
 workflow within the app. Feature tests tell you what's missing, and drive each
 step of the development process.
+Feature tests are driven by user stories.
 
 ### Unit Tests
 
@@ -95,9 +96,13 @@ your next task. It helps us get in "the zone"!
 
 ## GET All Articles
 
-### Demo: `GET /articles` Request Spec
+### Demo: Feature Test
 
-To check our specs, we run `bundle exec rspec spec` from the command line.
+####`GET /articles` Request Spec
+
+**User story:** As a user, I want to see a list of articles.
+
+To check our specs, we run `bundle exec rake test` from the command line.
 What output to we get?
 
 ```ruby
@@ -115,20 +120,44 @@ This output tells us exactly what went wrong (or more accurately, what did not
 
 ### Code-along: `GET /articles` Routing Spec
 
+Our test told us that no route matches "/articles". So the next step is to write
+a test for that route.
+What do we expect that route to do?
+
 Let's work on our `GET /articles` routing spec in [spec/routing/articles_spec.rb](spec/routing/articles_spec.rb) together
 to ensure that our routes are mapped to the correct controller method.
 
+Now that we have a test, let's create the route!
+Remeber, each time a unit test passes, it's time to commit.
+
 ### Code-along: `articles#index` Controller Spec
+
+Let's run `bundle exec rake test` again now that our route test passed.
+
+We get a nice new error:
+```sh
+Failure/Error: get '/articles'
+
+     AbstractController::ActionNotFound:
+       The action 'index' could not be found for ArticlesController
+```
 
 To wrap up our checks that all articles are correctly returned from our `index`
  method, we'll need a passing test for the controller method itself: [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb).
+
+Once the test is written, let's write an `index` method on the Article Controller.
+Don't forget to commit when your tests pass!
 
 ## GET One Article
 
 ### Code-along: `GET /articles/:id` Request Spec
 
+**User Story:** As a user, I want to see a specific article.
+
 In [spec/requests/articles_spec.rb](spec/requests/articles_spec.rb), let's
-make sure our API is returning a single article correctly.
+make sure our API is returning a single article correctly. Before we write our
+test, let's think about what our app is supposed to DO when it receives a GET
+request to this route.
 
 ### Code-along: `GET /articles/:id` Routing Spec
 
@@ -144,26 +173,58 @@ be sure to be testing against that.
 
 ## Completing Specs
 
-### Lab: Complete `Request` and `Routing` Specs
+### Lab: DELETE
 
-Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb)
- and [routing](spec/routing/articles_spec.rb) specs for `POST`, `PATCH`, and
- `DELETE`.
+#### Request spec
+**User Story:** As a user, I want to be able to delete an article.
 
-### Lab: Finish `ArticlesController` Specs
+Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb).
+What does a request to delete do?
+
+#### Routing spec
+Based on our `GET` specs, complete [routing](spec/routing/articles_spec.rb) specs for `DELETE`. What should the route do? Then write a route so that the test passes.
+Remember to commit after passing the test!
+
+#### Controller spec
 
 Continue working in [spec/controllers/articles_spec.rb](spec/controllers/articles_spec.rb) to
-create passing tests for the `POST`, `PATCH`, and `DELETE` controller actions.
+create passing tests for the `DELETE` controller actions. What does the `DELETE`
+controller action do?
+Then write the controller action so that the test passes, and commit.
+
+### Code-along: PATCH Request
+**User Story:** As a user, I would like to update an article.
+
+Working together, let's create a feature test for `PATCH` requests.
+
+### Lab: PATCH route
+Write a test for the `PATCH` route, and make it pass.
+
+### Code-along: PATCH controller
+Now that our route works, we're getting an error about our controller. Let's
+write a test for that!
+
+### Lab: POST
+**User Story:** As a user, I would like to create an article.
+
+Write a feature test for post requests.
+Then, following BDD, write tests for the route and controller.
 
 ## Testing Our Model
 
 ### Code-along: `Article` Model Spec
+
+**User Story** As a user, I want to see the comments associated with an article.
+**User Story** As a user, I want comments to be deleted when an article is deleted.
 
 In [spec/models/articles_spec.rb](spec/models/articles_spec.rb), we will need
 to write tests to check for the following:
 
 1.  Articles can have many comments.
 1.  If an article is destroyed, its associated comments must also be destroyed.
+
+Our first step will be to create feature tests to account for these
+new requirements. Create a new file: `spec/requests/article_comments_spec.rb`.
 
 ### Lab: Write `Article` Model and Run the Specs
 
