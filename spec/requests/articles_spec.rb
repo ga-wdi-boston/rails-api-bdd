@@ -85,7 +85,7 @@ RSpec.describe 'Articles API' do
     end
 
     it 'updates an article' do
-      patch "/articles/#{article.id}"
+      patch "/articles/#{article.id}", article: article_diff, format: :json
 
       expect(response).to be_success
       expect(response.body).to be_empty
