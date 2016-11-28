@@ -89,7 +89,7 @@ RSpec.describe 'Articles API' do
 
       expect(response).to be_success
       expect(response.body).to be_empty
-      expect(article['title']).to eq(article_diff['title'])
+      expect(article[:title]).to eq(article_diff[:title])
     end
   end
 
