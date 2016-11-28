@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   delete '/sign-out/:id' => 'users#signout'
   patch '/change-password/:id' => 'users#changepw'
   resources :users, only: [:index, :show]
+  resources :articles, only: [:index, :show, :destroy, :update, :create]
+  resources :comments, only: [:show, :update, :destroy]
+  get '/articles/:article_id/comments' => 'comments#index'
+  post '/articles/:article_id/comments' => 'comments#create'
 end

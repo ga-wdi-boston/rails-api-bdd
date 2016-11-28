@@ -22,23 +22,45 @@ RSpec.describe ArticlesController do
   end
 
   describe 'GET index' do
-    skip 'is succesful' do
+    before(:each) { get :index }
+    it 'is succesful' do
+      expect(response.status).to eq(200) # be_success
     end
 
-    skip 'renders a JSON response' do
+    it 'renders a JSON response' do
+      # takes the JSON in the response and makes it into a Ruby object
+      # that we can manipulate. Assigns that object to article_collection.
+      articles_collection = JSON.parse(response.body)
+
+      expect(articles_collection).not_to be_nil
+      expect(articles_collection.first['title']).to eq(article['title'])
     end
   end
 
   describe 'GET show' do
-    skip 'is successful' do
+    before(:each) { get :show, params: { id: article.id } }
+    it 'is successful' do
+      expect(response.status).to eq(200)
     end
 
-    skip 'renders a JSON response' do
+    it 'renders a JSON response' do
+      article_response = JSON.parse(response.body)
+      expect(article_response).not_to be_nil
     end
   end
 
-  describe 'DELETE destroy' do
-    skip 'is successful and returns an empty response' do
+  describe 'POST create' do
+    before(:each) do
+      post :create, params: { article: article_params }, format: :json
+    end
+
+    it 'is successful' do
+      expect(response).to be_successful
+    end
+
+    it 'renders a JSON response' do
+      article_response = JSON.parse(response.body)
+      expect(article_response).not_to be_nil
     end
   end
 
@@ -48,27 +70,47 @@ RSpec.describe ArticlesController do
     end
 
     before(:each) do
-      patch :update, id: article.id,
-                     params: { article: article_diff },
+      patch :update, params: {
+        id: article.id,
+        article: article_diff
+      },
                      format: :json
     end
 
-    skip 'is successful' do
-    end
-
-    skip 'renders a JSON response' do
+    it 'is successful and returns an empty response' do
+      expect(response.status).to eq(204)
+      expect(response.body).to be_empty
     end
   end
 
   describe 'POST create' do
+    def new_article
+      {
+        title: 'Testing iz gr8',
+        content: 'Except when it\'s not'
+      }
+    end
+
     before(:each) do
-      post :create, params: { article: article_params }, format: :json
+      post :create, params: { article: new_article }, format: :json
     end
 
-    skip 'is successful' do
+    it 'is successful' do
+      expect(response.status).to eq(201)
     end
 
-    skip 'renders a JSON response' do
+    it 'renders a JSON response' do
+      article_response = JSON.parse(response.body)
+      expect(article_response).not_to be_nil
+    end
+  end
+
+  describe 'DELETE destroy' do
+    it 'is successful and returns an empty response' do
+      delete :destroy, params: { id: article.id }
+
+      expect(response).to be_successful
+      expect(response.body).to be_empty
     end
   end
 end
