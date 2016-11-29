@@ -79,14 +79,24 @@ RSpec.describe ArticlesController do
   end
 
   describe 'POST create' do
+    def new_article
+      {
+        title: 'Testing iz gr8',
+        content: 'Except when it\'s not'
+      }
+    end
+
     before(:each) do
-      post :create, article: article_params, format: :json
+      post :create, article: new_article, format: :json
     end
 
-    skip 'is successful' do
+    it 'is successful' do
+      expect(response.status).to eq(201)
     end
 
-    skip 'renders a JSON response' do
+    it 'renders a JSON response' do
+      article_response = JSON.parse(response.body)
+      expect(article_response).not_to be_nil
     end
   end
 end
