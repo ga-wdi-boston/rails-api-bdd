@@ -1,9 +1,9 @@
-<% project_name = 'rails-api-bdd' %>
+<% project_name = 'rails-api-template' %>
 
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
   <<: *default

@@ -1,17 +1,18 @@
+Style/Documentation:
+  Exclude:
+    - 'app/**/*'
+    - 'db/migrate/**'
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
-Style/Documentation:
-  Exclude:
-    - 'app/controllers/*'
-    - 'app/models/*'
-    - 'app/serializers/*'
-
 AllCops:
+  TargetRubyVersion:
+    2.3
   Exclude:
-    - 'db/schema.rb'
-    - 'db/migrate/**'
+    - 'bin/*'
     - 'config/database.yml'
+    - 'db/schema.rb'
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
