@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe ArticlesController do
@@ -47,7 +48,9 @@ RSpec.describe ArticlesController do
     end
 
     before(:each) do
-      patch :update, id: article.id, article: article_diff, format: :json
+      patch :update, id: article.id,
+                     params: { article: article_diff },
+                     format: :json
     end
 
     skip 'is successful' do
@@ -59,7 +62,7 @@ RSpec.describe ArticlesController do
 
   describe 'POST create' do
     before(:each) do
-      post :create, article: article_params, format: :json
+      post :create, params: { article: article_params }, format: :json
     end
 
     skip 'is successful' do
