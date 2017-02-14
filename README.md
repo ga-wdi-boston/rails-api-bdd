@@ -30,6 +30,7 @@ By the end of this lesson, students should be able to:
 -   Drive behavior specification with user stories.
 -   Write automated CRUD request specs with RSpec.
 -   Drive routing, model, and controller specs using request specs.
+-   Write model unit specs for associations and validations.
 
 ## Preparation
 
