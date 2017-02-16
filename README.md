@@ -24,10 +24,13 @@ do.
 By the end of this lesson, students should be able to:
 
 -   Develop a Rails API using outside-in, behavior-driven testing.
+-   Describe the difference between Behavior and Test Driven Development
+    (BDD vs TDD)
 -   Make user stories to drive wireframes.
 -   Drive behavior specification with user stories.
 -   Write automated CRUD request specs with RSpec.
 -   Drive routing, model, and controller specs using request specs.
+-   Write model unit specs for associations and validations.
 
 ## Preparation
 
@@ -45,6 +48,29 @@ Why were they important?
 What do our user stories do for the scope of our project?
 How are they useful when wireframing our webapp's layout and UX?
 How do good user stories and wireframes help with app development?
+
+## Behavior Driven vs. Test Driven Development
+Tests can be written before or after writing development code. Writing tests
+after development is called 'backfilling'.  Test driven development (TDD) is a
+specific order of testing and writing code:
+1. Write a test
+2. Run the test (it should fail)
+3. Write code
+4. Run the test (if it fails, go back to step 3)
+5. Refactor
+6. Run the test
+
+It often refers to bottom-up testing, in which unit tests are written first, and
+features are tested afterwards using integration tests. TDD is a challenge, and
+if you're feeling up for it, try it! Backfilling tests may be a more attainable
+goal for your project.
+
+Behavior Driven Development is top-down testing. g. It can be done either before
+or after writing code, so BDD can be done as part of TDD, or as backfilling.
+BDD is about writing a feature (a fancy curl request written in Ruby) and having
+that initiate an error (a routing error), then writing a unit that shows the
+same error (a routing unit test), then writing the code that passes it, then
+running the feature, seeing a new error, etc...
 
 ## Outside-In Testing
 
