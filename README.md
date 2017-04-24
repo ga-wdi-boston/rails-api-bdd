@@ -53,12 +53,13 @@ How do good user stories and wireframes help with app development?
 Tests can be written before or after writing development code. Writing tests
 after development is called 'backfilling'.  Test driven development (TDD) is a
 specific order of testing and writing code:
-1. Write a test
-2. Run the test (it should fail)
-3. Write code
-4. Run the test (if it fails, go back to step 3)
-5. Refactor
-6. Run the test
+
+1.  Write a test
+1.  Run the test (it should fail)
+1.  Write code
+1.  Run the test (if it fails, go back to step 3)
+1.  Refactor
+1.  Run the test
 
 It often refers to bottom-up testing, in which unit tests are written first, and
 features are tested afterwards using integration tests. TDD is a challenge, and
