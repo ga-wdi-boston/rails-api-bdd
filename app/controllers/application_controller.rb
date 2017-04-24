@@ -2,11 +2,6 @@
 # Do not inherit from this class unless you know what you're doing
 # See ProtectedController and OpenReadController
 class ApplicationController < ActionController::API
-  # Force to wants JSON for API
-  before_action :api_request_settings
-  def api_request_settings
-    request.format = :json
-  end
 
   AUTH_PROC = proc do |signed_token, _opts|
     token = begin
@@ -51,5 +46,5 @@ class ApplicationController < ActionController::API
 
   # Restrict visibility of these methods
   private :authenticate, :current_user, :set_current_user, :record_not_found
-  private :ssl_configured?, :api_request_settings
+  private :ssl_configured?
 end

@@ -49,8 +49,7 @@ RSpec.describe ArticlesController do
 
     before(:each) do
       patch :update, id: article.id,
-                     params: { article: article_diff },
-                     format: :json
+                     params: { article: article_diff }
     end
 
     skip 'is successful' do
@@ -62,7 +61,7 @@ RSpec.describe ArticlesController do
 
   describe 'POST create' do
     before(:each) do
-      post :create, params: { article: article_params }, format: :json
+      post :create, params: { article: article_params }
     end
 
     skip 'is successful' do
