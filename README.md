@@ -65,7 +65,7 @@ features are tested afterwards using integration tests. TDD is a challenge, and
 if you're feeling up for it, try it! Backfilling tests may be a more attainable
 goal for your project.
 
-Behavior Driven Development is top-down testing. g. It can be done either before
+Behavior Driven Development is top-down testing. It can be done either before
 or after writing code, so BDD can be done as part of TDD, or as backfilling.
 BDD is about writing a feature (a fancy curl request written in Ruby) and having
 that initiate an error (a routing error), then writing a unit that shows the
