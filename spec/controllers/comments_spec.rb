@@ -58,8 +58,7 @@ RSpec.describe CommentsController do
     end
 
     before(:each) do
-      patch :update, params: { id: comment.id, comment: comment_diff },
-                     format: :json
+      patch :update, params: { id: comment.id, comment: comment_diff }
     end
 
     it 'is successful' do
@@ -75,7 +74,7 @@ RSpec.describe CommentsController do
 
   describe 'DELETE destroy' do
     it 'is successful and returns an empty response' do
-      delete :destroy, params: { id: comment.id }, format: :json
+      delete :destroy, params: { id: comment.id }
 
       expect(response).to be_successful
       expect(response.body).to be_empty

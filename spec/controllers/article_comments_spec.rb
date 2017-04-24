@@ -57,8 +57,7 @@ RSpec.describe CommentsController do
       post :create, params: {
         article_id: article.id,
         comment: comment_params
-      },
-                    format: :json
+      }
     end
 
     it 'is successful' do

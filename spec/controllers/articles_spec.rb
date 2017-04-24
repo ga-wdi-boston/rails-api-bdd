@@ -51,7 +51,7 @@ RSpec.describe ArticlesController do
 
   describe 'POST create' do
     before(:each) do
-      post :create, params: { article: article_params }, format: :json
+      post :create, params: { article: article_params }
     end
 
     it 'is successful' do
@@ -73,8 +73,7 @@ RSpec.describe ArticlesController do
       patch :update, params: {
         id: article.id,
         article: article_diff
-      },
-                     format: :json
+      }
     end
 
     it 'is successful and returns an empty response' do
@@ -92,7 +91,7 @@ RSpec.describe ArticlesController do
     end
 
     before(:each) do
-      post :create, params: { article: new_article }, format: :json
+      post :create, params: { article: new_article }
     end
 
     it 'is successful' do
