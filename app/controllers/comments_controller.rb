@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      render json: @comment, status: :ok
+      render json: @comment
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
