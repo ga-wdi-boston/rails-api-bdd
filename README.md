@@ -125,7 +125,7 @@ your next task. It helps us get in "the zone"!
 
 ### Demo: Feature Test
 
-####`GET /articles` Request Spec
+#### `GET /articles` Request Spec
 
 **User story:** As a user, I want to see a list of articles.
 
