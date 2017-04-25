@@ -205,8 +205,7 @@ be sure to be testing against that.
 #### Request spec
 **User Story:** As a user, I want to be able to delete an article.
 
-Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb).
-What does a request to delete do?
+Based on our `GET` request spec, complete a [request spec for delete](spec/requests/articles_spec.rb). What does a request to delete do?
 
 #### Routing spec
 Based on our `GET` specs, complete [routing](spec/routing/articles_spec.rb) specs for `DELETE`. What should the route do? Then write a route so that the test passes.
