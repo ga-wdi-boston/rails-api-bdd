@@ -53,19 +53,20 @@ How do good user stories and wireframes help with app development?
 Tests can be written before or after writing development code. Writing tests
 after development is called 'backfilling'.  Test driven development (TDD) is a
 specific order of testing and writing code:
-1. Write a test
-2. Run the test (it should fail)
-3. Write code
-4. Run the test (if it fails, go back to step 3)
-5. Refactor
-6. Run the test
+
+1.  Write a test
+1.  Run the test (it should fail)
+1.  Write code
+1.  Run the test (if it fails, go back to step 3)
+1.  Refactor
+1.  Run the test
 
 It often refers to bottom-up testing, in which unit tests are written first, and
 features are tested afterwards using integration tests. TDD is a challenge, and
 if you're feeling up for it, try it! Backfilling tests may be a more attainable
 goal for your project.
 
-Behavior Driven Development is top-down testing. g. It can be done either before
+Behavior Driven Development is top-down testing. It can be done either before
 or after writing code, so BDD can be done as part of TDD, or as backfilling.
 BDD is about writing a feature (a fancy curl request written in Ruby) and having
 that initiate an error (a routing error), then writing a unit that shows the
@@ -124,7 +125,7 @@ your next task. It helps us get in "the zone"!
 
 ### Demo: Feature Test
 
-####`GET /articles` Request Spec
+#### `GET /articles` Request Spec
 
 **User story:** As a user, I want to see a list of articles.
 
@@ -204,8 +205,7 @@ be sure to be testing against that.
 #### Request spec
 **User Story:** As a user, I want to be able to delete an article.
 
-Based on our `GET` specs, complete [request](spec/requests/articles_spec.rb).
-What does a request to delete do?
+Based on our `GET` request spec, complete a [request spec for delete](spec/requests/articles_spec.rb). What does a request to delete do?
 
 #### Routing spec
 Based on our `GET` specs, complete [routing](spec/routing/articles_spec.rb) specs for `DELETE`. What should the route do? Then write a route so that the test passes.

@@ -3,9 +3,6 @@
 class ArticlesController < ApplicationController
   before_filter :set_article, only: [:show, :update, :destroy]
 
-  def index
-  end
-
   def show
   end
 
