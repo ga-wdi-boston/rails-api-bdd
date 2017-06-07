@@ -6,7 +6,12 @@ RSpec.describe 'routes for articles' do
     expect(get('/articles')).to route_to('articles#index')
   end
 
-  skip 'routes GET /articles/:id to the articles#show action' do
+  it 'routes GET /articles/:id to the articles#show action' do
+    expect(get('/articles/1')).to route_to(
+      controller: 'articles',
+      action: 'show',
+      id: '1'
+    )
   end
 
   skip 'routes DELETE /articles/:id to the articles#destroy action' do

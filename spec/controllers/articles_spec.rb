@@ -37,10 +37,13 @@ RSpec.describe ArticlesController do
   end
 
   describe 'GET show' do
-    skip 'is successful' do
+    before(:each) {
+      get :show, params: { id: article.id }
+    }
+    it 'is successful' do
     end
 
-    skip 'renders a JSON response' do
+    it 'renders a JSON response' do
     end
   end
 
