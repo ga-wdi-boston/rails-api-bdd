@@ -41,9 +41,14 @@ RSpec.describe ArticlesController do
       get :show, params: { id: article.id }
     }
     it 'is successful' do
+      expect(response).to be_success
     end
 
     it 'renders a JSON response' do
+      article_response = JSON.parse(response.body)
+
+      expect(article_response['id']).to eq(article.id)
+      expect(article_response['title']).to eq(article.title)
     end
   end
 
