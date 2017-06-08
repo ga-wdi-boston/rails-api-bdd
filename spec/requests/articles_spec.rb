@@ -70,7 +70,17 @@ RSpec.describe 'Articles API' do
       { title: 'Two Stupid Tricks' }
     end
 
-    skip 'updates an article' do
+    it 'updates an article' do
+      # send patch request
+      patch "/articles/#{article.id}", params: { article: article_diff }
+      # send the params with the diff
+
+      # expect response is successful
+      expect(response).to be_success
+      # expect response body is empty
+      expect(response.body).to be_empty
+      # expect the article title is the updated article title
+      expect(article[:title]).to eq(article_diff[:title])
     end
   end
 
