@@ -51,7 +51,17 @@ RSpec.describe 'Articles API' do
   end
 
   describe 'DELETE /articles/:id' do
-    skip 'deletes an article' do
+    it 'deletes an article' do
+      # somehow send delete request to url
+      delete "/articles/#{article.id}"
+
+      # check response for success?
+      expect(response).to be_success
+      # response.body should be empty
+      expect(response.body).to be_empty
+
+      # article should be nil
+      expect(article).to be_nil
     end
   end
 

@@ -14,7 +14,12 @@ RSpec.describe 'routes for articles' do
     )
   end
 
-  skip 'routes DELETE /articles/:id to the articles#destroy action' do
+  it 'routes DELETE /articles/:id to the articles#destroy action' do
+    expect(delete('articles/1')).to route_to(
+      controller: 'articles',
+      action: 'destroy',
+      id: '1'
+    )
   end
 
   skip 'routes PATCH /articles/:id to the articles#update action' do
